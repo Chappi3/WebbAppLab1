@@ -23,37 +23,38 @@
       </div>
     </header>
 
-    <div class="results">
-      <table>
-        <tr>
-          <p>Result:</p>
-          <p class="result"></p>
-        </tr>
-        <tr>
-          <p>Answer:</p>
-          <p class="answer"></p>
-        </tr>
-      </table>
-
-      <label for="progress" class="title-primary"
-        >Quiz <span class="title-secondary">progress</span></label
-      >
-      <progress class="progress" max="10" value="0">
-        <div class="progress-bar">
-          <span style="width: 60%">60%</span>
-        </div>
-      </progress>
-    </div>
-
-    <main class="content">
+    <main class="content-main">
       <div class="content-title">
         <h1 class="title-primary">
-          Quiz<span class="title-secondary"> info</span>
+          Quiz<span class="title-secondary"> info:</span>
         </h1>
+        <h4 class="title-primary">
+          Category: <span class="title-secondary" id="category"></span>
+        </h4>
+        <h4 class="title-primary">
+          Difficulty: <span class="title-secondary" id="difficulty"></span>
+        </h4>
       </div>
-      <div class="content-div">
-        <h1 class="question">Question</h1>
+      <div class="progress">
+        <label for="progress" class="title-primary"
+          >Quiz <span class="title-secondary">progress</span></label
+        >
+        <progress class="progress" id="progress" max="10" value="0"></progress>
       </div>
+      <div class="question">
+        <h4 id="question"></h4>
+        <div>
+          <button id="answer1"></button><br />
+          <button id="answer2"></button><br />
+          <button id="answer3"></button><br />
+          <button id="answer4"></button><br />
+        </div>
+      </div>
+      <div id="content"></div>
+      <br />
+      <br />
+      <button id="startButton">Start Quiz</button>
+      <button id="newButton">New Quiz</button>
     </main>
 
     <footer id="main-footer">
@@ -71,5 +72,7 @@
         </p>
       </div>
     </footer>
+
+    <script src="js/main.js"></script>
   </body>
 </html>

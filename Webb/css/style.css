@@ -29,14 +29,14 @@ header {
   color: #ffffff;
 }
 
-/* Results */
-.results {
+/* Progress */
+.progress {
   margin: auto;
   text-align: center;
 }
 
 /* Content */
-.content {
+.content-main {
   margin: auto;
   width: 500px;
   min-height: calc(100vh - 60px);
@@ -44,6 +44,12 @@ header {
 .content-title {
   display: flex;
   background: #3b3b3b;
+}
+.content {
+  margin: auto;
+}
+.question {
+  margin: auto;
 }
 
 /* Footer */
