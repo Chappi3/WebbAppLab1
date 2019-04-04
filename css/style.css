@@ -150,6 +150,43 @@ progress[value]::-webkit-progress-value {
   background-size: 35px 20px, 100% 100%, 100% 100%;
 }
 
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #3b3b3b;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #202020;
+  border: 1px #27cc3d solid;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #27cc3d;
+}
+/* Buttons */
+::-webkit-scrollbar-button:single-button {
+  background-color: #3b3b3b;
+  display: block;
+  border-style: solid;
+  height: 13px;
+  width: 16px;
+}
+/* Up */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  border-width: 0 8px 8px 8px;
+  border-color: transparent transparent #27cc3d transparent;
+}
+/* Down */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  border-width: 8px 8px 0 8px;
+  border-color: #27cc3d transparent transparent transparent;
+}
+
 /* Media queries */
 
 /* Phone */
