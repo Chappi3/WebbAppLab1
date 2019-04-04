@@ -1,7 +1,11 @@
 /* Body */
 body {
   background: #202020;
+  background-image: linear-gradient(to bottom, #202020, #3b3b3b, #202020);
   color: #ffffff;
+  height: 100%;
+  margin: 0;
+  line-height: 1.5;
 }
 
 /* Links */
@@ -16,12 +20,17 @@ a:hover {
 
 /* Header */
 header {
-  margin: auto;
+  display: grid;
+  width: 100%;
+  z-index: -1;
+  min-height: 60px;
 }
 .header-div {
   display: flex;
   background: #3b3b3b;
 }
+
+/* Titles */
 .title-primary {
   color: #27cc3d;
 }
@@ -29,46 +38,128 @@ header {
   color: #ffffff;
 }
 
-/* Progress */
-.progress {
-  margin: auto;
-  text-align: center;
-}
-
 /* Content */
 .content-main {
   margin: auto;
-  width: 500px;
-  min-height: calc(100vh - 60px);
+  width: 100%;
+  min-height: calc(100vh - 150px);
+  text-align: center;
 }
 .content-title {
   display: flex;
   background: #3b3b3b;
 }
-.content {
+.progress {
+  display: flex;
+  margin: auto;
+}
+.progressBar {
   margin: auto;
 }
 .question {
+  display: flex;
   margin: auto;
+}
+.answers {
+  display: grid;
+  padding: 1rem;
+}
+.content {
+  margin: auto;
+  list-style: none;
 }
 
 /* Footer */
-#main-footer {
+.footer {
+  display: grid;
   background: #3b3b3b;
   padding: 1rem;
   height: 60px;
+  width: 100%;
 }
-#main-footer .copyright {
+.copyright {
   text-align: center;
 }
-#main-footer .icons {
-  text-align: left;
+.icons {
+  text-align: center;
 }
-#main-footer .icons a {
+.icons a {
   padding: 0.4rem;
 }
 
-/* H1 */
-h1 {
+/* H1-H6 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: auto;
 }
+
+/* Buttons */
+.button {
+  display: grid;
+  margin: 5px auto;
+  width: 50%;
+  background-color: #3b3b3b;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 12px;
+  border: 2px solid #27cc3d;
+  outline: none;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #27cc3d;
+  border: 2px solid #3b3b3b;
+  color: #202020;
+  transition: all 0.5s ease-out;
+}
+
+/* Progress bar */
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 250px;
+  height: 20px;
+}
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+progress[value]::-webkit-progress-value {
+  background-image: -webkit-linear-gradient(
+      -45deg,
+      transparent 33%,
+      rgba(0, 0, 0, 0.1) 33%,
+      rgba(0, 0, 0, 0.1) 66%,
+      transparent 66%
+    ),
+    -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+    -webkit-linear-gradient(left, #27cc3d, #27cc3d);
+
+  border-radius: 2px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+/* Media queries */
+
+/* Phone */
+/* > 480px; */
+
+/* Tablet */
+/* 481px > 768px; */
+
+/* Laptop */
+/* 769px > 1024px; */
+
+/* Desktop */
+/* 1025px > */

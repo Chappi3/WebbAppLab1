@@ -39,37 +39,42 @@
         <label for="progress" class="title-primary"
           >Quiz <span class="title-secondary">progress</span></label
         >
-        <progress class="progress" id="progress" max="10" value="0"></progress>
+        <progress
+          class="progressBar"
+          id="progress"
+          max="10"
+          value="0"
+        ></progress>
       </div>
       <div class="question">
         <h4 id="question"></h4>
-        <div>
-          <button id="answer1"></button><br />
-          <button id="answer2"></button><br />
-          <button id="answer3"></button><br />
-          <button id="answer4"></button><br />
+        <div class="answers">
+          <button class="button" id="answer1"></button>
+          <button class="button" id="answer2"></button>
+          <button class="button" id="answer3"></button>
+          <button class="button" id="answer4"></button>
         </div>
       </div>
-      <div id="content"></div>
-      <br />
-      <br />
-      <button id="startButton">Start Quiz</button>
-      <button id="newButton">New Quiz</button>
+      <div class="content" id="content"></div>
+      <button class="button" id="startButton">Start Quiz</button>
+      <button class="button" id="newButton">New Quiz</button>
     </main>
 
-    <footer id="main-footer">
-      <div>
-        <div class="icons">
-          <a href="#!">
-            <i class="fab fa-linkedin fa-2x"></i>
-          </a>
-          <a href="#!">
-            <i class="fab fa-github fa-2x"></i>
-          </a>
-        </div>
-        <p class="copyright">
-          Copyright &copy; 2019, <span class="title-primary">Tonny</span> Frisk
-        </p>
+    <footer class="footer">
+      <div class="copyright">
+        Copyright &copy; 2019,
+        <span class="title-primary">Tonny</span> Frisk
+      </div>
+      <div class="icons">
+        <a
+          href="https://www.linkedin.com/in/tonny-frisk-06b15a17b/"
+          target="_blank"
+        >
+          <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+        <a href="https://github.com/Chappi3/" target="_blank">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
       </div>
     </footer>
 

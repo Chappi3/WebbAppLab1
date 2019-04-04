@@ -125,7 +125,7 @@ function stopQuiz() {
   let output = "";
   for (let info in results) {
     output +=
-      "<ul>" +
+      '<ul style="list-style: none;">' +
       "<li>Question: " +
       results[info][0] +
       "</li>" +
