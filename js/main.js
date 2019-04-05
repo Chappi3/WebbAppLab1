@@ -1,6 +1,4 @@
 // fields
-const api =
-  "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple";
 const xhr = new XMLHttpRequest();
 const startButton = document.getElementById("startButton");
 const newButton = document.getElementById("newButton");
@@ -8,6 +6,10 @@ const questionBlock = document.querySelector(".question");
 const titleBlock = document.querySelector(".content-title");
 const progressBlock = document.querySelector(".progress");
 const contentBlock = document.getElementById("content");
+const selectionBlock = document.getElementById("selection");
+const selectedCategory = document.getElementById("selectCategory");
+const selectedDifficulty = document.getElementById("selectDifficulty");
+let api = "https://opentdb.com/api.php?amount=10&type=multiple";
 let questionIndex = 0;
 let number = 1;
 let correct = 0;
@@ -16,7 +18,7 @@ let answers;
 let results = [];
 
 // Buttons
-startButton.addEventListener("click", loadContent); // Start Quiz
+startButton.addEventListener("click", createURL); // Start Quiz
 newButton.addEventListener("click", reset); // new quiz
 
 // listen for selection
@@ -41,6 +43,37 @@ questionBlock.style.display = "none";
 
 contentBlock.innerHTML = 'Welcome to my quiz! Press "Start Quiz" to start!';
 
+// create custom URL for API based on selections
+function createURL() {
+  // hide the selections
+  selectionBlock.style.display = "none";
+
+  // check if both have anything selected
+  if (selectedCategory.value !== "" && selectedDifficulty.value !== "") {
+    api =
+      "https://opentdb.com/api.php?amount=10&category=" +
+      selectedCategory.value +
+      "&difficulty=" +
+      selectedDifficulty.value +
+      "&type=multiple";
+    // check if there is a category selected
+  } else if (selectedCategory.value !== "" && selectedDifficulty.value === "") {
+    api =
+      "https://opentdb.com/api.php?amount=10&category=" +
+      selectedCategory.value +
+      "&type=multiple";
+    // check if there is a difficulty selected
+  } else if (selectedDifficulty.value !== "" && selectedCategory.value === "") {
+    api =
+      "https://opentdb.com/api.php?amount=10&difficulty=" +
+      selectedDifficulty.value +
+      "&type=multiple";
+  }
+
+  // get content from API
+  loadContent();
+}
+
 // Print question and info
 function printQuestion(index) {
   // display progress titles and question block
@@ -50,10 +83,8 @@ function printQuestion(index) {
 
   // category
   document.getElementById("category").innerHTML = questions[index].category;
-
   // difficulty
   document.getElementById("difficulty").innerHTML = questions[index].difficulty;
-
   // question
   document.getElementById("question").innerHTML = questions[index].question;
 
@@ -120,6 +151,7 @@ function stopQuiz() {
   // show the content block with results and new quiz button
   contentBlock.style.display = "initial";
   newButton.style.display = "initial";
+  selectionBlock.style.display = "initial";
 
   // make output for results
   let output = "";
@@ -154,8 +186,9 @@ function reset() {
   questionIndex = 0;
   correct = 0;
   number = 1;
+  results = [];
   document.getElementById("progress").value = 0;
-  loadContent();
+  createURL();
 }
 
 // OPEN - type, url/file, async
@@ -168,6 +201,7 @@ function loadContent() {
       // get the questions
       let response = JSON.parse(this.responseText);
       questions = response.results;
+      console.log(response);
 
       // hide the start quiz button and new quiz button
       startButton.style.display = "none";
