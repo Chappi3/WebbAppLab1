@@ -208,7 +208,7 @@ progress[value]::-webkit-progress-value {
   padding: 15px 32px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 50%;
+  width: 25%;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   border-radius: 12px;
@@ -234,6 +234,9 @@ progress[value]::-webkit-progress-value {
   .button {
     width: 75%;
   }
+  .select {
+    width: 75%;
+  }
 }
 
 /* Tablet */
@@ -242,12 +245,18 @@ progress[value]::-webkit-progress-value {
   .button {
     width: 50%;
   }
+  .select {
+    width: 50%;
+  }
 }
 
 /* Laptop / Desktop */
 /* 769px > */
 @media screen and (min-width: 769px) {
   .button {
+    width: 25%;
+  }
+  .select {
     width: 25%;
   }
 }
